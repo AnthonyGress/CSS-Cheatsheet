@@ -74,6 +74,7 @@ h2 {
     color: var(--heliotrope);
     border: 1px solid var(--gin);
     border-radius: 5px;
+    text-align: center;
     z-index: 1;
     
 }
@@ -167,6 +168,12 @@ h1 + p {
     font-size: 1.2rem;
 }
 
+.fade-in-delay {
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation: fadein 2s 2s 1 normal forwards;
+  }
+
 .row {
     display: flex;
     flex-direction: row;
@@ -176,9 +183,56 @@ h1 + p {
     margin-right: 1.5rem;
 }
 
+.slam {
+    opacity: 0;
+    animation: slam 1.75s .2s 1 normal forwards;
+  }
+
+  .slide-in-left {
+    opacity: 0;
+    animation: slideinleft 1.25s .2s 1 normal forwards;
+  }
+
+  .slide-in-right {
+    opacity: 0;
+    animation: slideinright 1.25s .2s 1 normal forwards;
+  }
+
 .subheading > h1 {
     padding: 2rem;
 }
+
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+@keyframes slam {
+    from {opacity: 0; font-size: 200%;}
+    to {opacity:1; font-size: 100%;}
+  }
+
+  @keyframes slideinleft {
+    from{
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+  
+  @keyframes slideinright {
+    from{
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
 
 @media screen and (min-width: 768px) {
     .card-col {
