@@ -48,6 +48,16 @@ section p {
     color: var(--heliotrope);
 }
 
+span[data-descr] {
+    position: relative;
+    color: #000;
+    cursor: pointer;
+  }
+
+span[data-descr]:focus::after  {
+    content: attr(data-descr);
+}
+
 code {
     color: var(--gin);
     font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
