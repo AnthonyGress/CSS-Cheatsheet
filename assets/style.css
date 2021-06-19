@@ -3,7 +3,8 @@
     --bright-turquoise: #2aefcb;
     --gin: #e0eae4;
     --heliotrope: #e866ec;
-    --gradient-dark: #833885;
+    --gradient-dark: #944197;
+    --secondary-color: #7908b1;
     
 }
 
@@ -45,7 +46,10 @@ section p {
 
 code {
     color: var(--gin);
-    font-family: monospace;
+    font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+    'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+    'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
+    monospace
 }
 
 .code-card pre:active {
@@ -58,6 +62,7 @@ h1 {
     text-align: center;
     color: var(--heliotrope);
     font-size: 200%;
+    /* add fade in */
 }
 
 h2 {
@@ -72,6 +77,7 @@ h2 {
 h1 + p {
     font-size: 1.2rem;
     margin: 1% 10%;
+    /* add slam animation */
 }
 
 .card-header {
@@ -83,14 +89,23 @@ h1 + p {
     transition: all 0.5s ease-in-out;
 }
 
+.card-header-sm {
+    position: relative;
+    margin-top: -4rem;
+    padding: 0.5rem 1rem;
+    z-index: 99;
+    background-color: var(--outer-space);
+    transition: all 0.5s ease-in-out;
+    font-size: 1.5rem;
+}
+
 .code-card {
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
     justify-content: flex-start;
     border: 2px dashed var(--gin);
-    transition: all 0.5s ease-in-out;
-
+    transition: all 0.4s ease-in-out;
 }
 
 /* when hovering over code-card also do this to the header */
@@ -99,9 +114,14 @@ h1 + p {
 
 }
 
+/* can i make this glow animation stick when clicked? */
+#code-card-sm:hover, #code-card-sm:hover .card-header-sm  {
+    box-shadow: 0px 0px 8px var(--bright-turquoise), 0 0 30px var(--bright-turquoise);
+
+}
+
 .card-col {
     flex: 1 1 100%;
-    transition: flex-basis 500ms linear;
     margin: 4rem 0 1.5rem 0;
     padding: 0.5rem 1rem;
 
@@ -113,15 +133,33 @@ h1 + p {
     margin: 2rem 0;
     padding: 2rem 1rem;
     line-height: 1.75;
+    white-space: pre-line;
+    overflow: auto;
+    align-items: center;
+    font-size: 1.0rem;
+    display: flex;
+}
+
+.code-block-sm {
+    background: linear-gradient(var(--gradient-dark), var(--heliotrope));
+    border-radius: 10px;
+    margin: 2rem 0;
+    padding: 2rem 1rem;
+    line-height: 1.75;
     display: flex;
     white-space: pre-wrap;
     overflow: auto;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .description {
     margin-top: 2rem;
+}
+
+.description-sm {
+    margin-top: -1rem;
+    font-size: 1.2rem;
 }
 
 .row {
@@ -131,6 +169,10 @@ h1 + p {
     justify-content: center;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
+}
+
+.subheading > h1 {
+    padding: 2rem;
 }
 
 @media screen and (min-width: 768px) {

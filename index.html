@@ -10,11 +10,15 @@
 </head>
 <!-- TODO
 make all flex boxes the same size as the largest one on the page. 
-add javascript button to copy text -->
+add javascript button to copy text 
+hover over small heading glow css
+
+/* can i make this glow animation stick when clicked? */
+-->
 <body>
     <header>
         <h1>CSS Snippet Cheatsheet</h1>
-        <p>Ever have trouble recalling the exact syntax for your favorite CSS code? Give it a permanent home and add it to this page! Select any snippet below and it'll automatically select all of the code for you to copy.</p>
+        <p>Stop forgetting the syntax for your Flexbox and CSS code.</p>
     </header>
     <main>
         <section class="row">
@@ -73,10 +77,7 @@ grid-template-columns: repeat(12, 1fr);
                             <p>Use these properties to create a Flexbox row layout.</p>
                         </div>
                         <pre class="code-block"><code>.linear-gradient-background {
-background-image: linear-gradient(
-rgba(232, 102, 236, 0.3) 0%,
-rgba(232, 102, 236, 0.6) 100%
-);
+                            background: linear-gradient(var(--gradient-dark), var(--heliotrope))
 }</code></pre>
                     </figure>
                 </div>
@@ -96,7 +97,7 @@ transition: all 0.5s ease-in-out;
                           
 .code-card:hover,
 .code-card:hover .card-header {
-box-shadow: inset 0px 0px 8px rgba(232, 102, 236, 1), 0 0 15px rgba(232, 102, 236, 1);
+box-shadow: 0px 0px 8px var(--color1), var(--color2);
 }</code></pre>
                     </figure>
                 </div>
@@ -105,19 +106,142 @@ box-shadow: inset 0px 0px 8px rgba(232, 102, 236, 1), 0 0 15px rgba(232, 102, 23
             <div class="card-col">
                 <div class="card-body">
                     <figure class="code-card">
-                        <h2 class="card-header">Overlay Card with Title</h2>
+                        <h2 class="card-header">Title Overlay</h2>
                         <div class="description">
                             <p>Use these properties to create a Flexbox row layout.</p>
                         </div>
                         <pre class="code-block"><code>.card-header {
 position: relative;
-margin-top: -20px;
+margin-top: -4rem;
 background-color: var(--dark-bg)
 }</code></pre>
                     </figure>
                 </div>
 
             </div>
+        </section>
+        <header>
+            <div class="subheading">
+                <h1>Flexbox Properties</h1>
+            </div>
+        </header>
+        <section class="row">
+            <div class="card-col">
+                <div class="card-body">
+                    <figure class="code-card" id="code-card-sm">
+                        <h2 class="card-header-sm">justify-content</h2>
+                        <div class="code-block-sm"><code>justify-content: flex-start|flex-end|center|space-between|space-around|space-evenly|initial|inherit;
+                        </code></div>
+                        <div class="description-sm">
+                            <p>Defines how flexbox/grid items are aligned according to the main axis, within a flexbox/grid container.
+
+                            </p>
+                        </div>
+                    </figure>
+                </div>
+                </div>            
+            <div class="card-col">
+                <div class="card-body">
+                    <figure class="code-card" id="code-card-sm">
+                        <h2 class="card-header-sm">align-items</h2>
+                        <div class="code-block-sm"><code>align-items: stretch|center|flex-start|flex-end|baseline|initial|inherit;</code></div>
+                        <div class="description-sm">
+                              <p>Defines how flexbox items are aligned according to the cross axis, within a line of a flexbox container.</p>
+                         </div>
+                     </figure>
+                </div>
+                </div>
+                <div class="card-col">
+                    <div class="card-body">
+                        <figure class="code-card" id="code-card-sm">
+                            <h2 class="card-header-sm">flex-direction</h2>
+                            <div class="code-block-sm"><code>flex-direction: row|row-reverse|column|column-reverse|initial|inherit;
+                            </code></div>
+                            <div class="description-sm">
+                                  <p>Use these properties to create a Flexbox row layout.</p>
+                             </div>
+                         </figure>
+                    </div>
+                    </div>
+                    <div class="card-col">
+                        <div class="card-body">
+                            <figure class="code-card" id="code-card-sm">
+                                <h2 class="card-header-sm">order</h2>
+                                <div class="code-block-sm"><code>order: number|initial|inherit;
+                                </code></div>
+                                <div class="description-sm">
+                                      <p>specifies the order of a flexible item relative to the rest of the flexible items inside the same container.</p>
+                                 </div>
+                             </figure>
+                        </div>
+                        </div>
+                        <div class="card-col">
+                            <div class="card-body">
+                                <figure class="code-card" id="code-card-sm">
+                                    <h2 class="card-header-sm">align-self</h2>
+                                    <div class="code-block-sm"><code>align-self: auto|stretch|center|flex-start|flex-end|baseline|initial|inherit;</code></div>
+                                    <div class="description-sm">
+                                          <p>specifies the alignment for the selected item inside the flexible container.</p>
+                                     </div>
+                                 </figure>
+                            </div>
+                            </div>
+                            <div class="card-col">
+                                <div class="card-body">
+                                    <figure class="code-card" id="code-card-sm">
+                                        <h2 class="card-header-sm">flex-wrap</h2>
+                                        <div class="code-block-sm"><code>flex-wrap: nowrap|wrap|wrap-reverse|initial|inherit;
+                                        </code></div>
+                                        <div class="description-sm">
+                                              <p>specifies whether the flexible items should wrap or not.</p>
+                                         </div>
+                                     </figure>
+                                </div>
+                                </div>
+                                <div class="card-col">
+                                    <div class="card-body">
+                                        <figure class="code-card" id="code-card-sm">
+                                            <h2 class="card-header-sm">flex-flow</h2>
+                                            <div class="code-block-sm"><code>flex-flow: flex-direction flex-wrap|initial|inherit;</code></div>
+                                            <div class="description-sm">
+                                                  <p>shorthand property for: flex-direction flex-wrap</p>
+                                             </div>
+                                         </figure>
+                                    </div>
+                                    </div>
+                                    <div class="card-col">
+                                        <div class="card-body">
+                                            <figure class="code-card" id="code-card-sm">
+                                                <h2 class="card-header-sm">align-content</h2>
+                                                <div class="code-block-sm"><code>align-content: stretch|center|flex-start|flex-end|space-between|space-around|initial|inherit;</code></div>
+                                                <div class="description-sm">
+                                                      <p>modifies the behavior of the flex-wrap property. It is similar to align-items, but instead of aligning flex items, it aligns flex lines</p>
+                                                 </div>
+                                             </figure>
+                                        </div>
+                                        </div>                                    
+                                        <div class="card-col">
+                                            <div class="card-body">
+                                                <figure class="code-card" id="code-card-sm">
+                                                    <h2 class="card-header-sm">Flexbox Values</h2>
+                                                    <div class="code-block-sm"><code>flex-start, flex-end, center, space-between, space-around, space-evenly, initial, inherit</code></div>
+                                                    <div class="description-sm">
+                                                          <p>modifies the behavior of the flex-wrap property. It is similar to align-items, but instead of aligning flex items, it aligns flex lines</p>
+                                                     </div>
+                                                 </figure>
+                                            </div>
+                                            </div>
+            
+            <!-- <ul>
+                <li>justify-content - Defines how flexbox/grid items are aligned according to the main axis, within a flexbox/grid container.</li>
+                <li>align-items - Defines how flexbox items are aligned according to the cross axis, within a line of a flexbox container.</li>
+                <li>flex-direction - specifies the direction of the flexible items.</li>
+                <li>order - specifies the order of a flexible item relative to the rest of the flexible items inside the same container.</li>
+                <li>align-self - specifies the alignment for the selected item inside the flexible container.</li>
+                <li>flex-wrap - specifies whether the flexible items should wrap or not.</li>
+                <li>flex-flow - shorthand property for: flex-direction flex-wrap</li>
+                <li>align-content - modifies the behavior of the flex-wrap property. It is similar to align-items, but instead of aligning flex items, it aligns flex lines.</li>
+            </ul> -->
         </section>
     </main>
 <footer>Made with ❤️ and CSS</footer>
