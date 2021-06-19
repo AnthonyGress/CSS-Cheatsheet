@@ -186,16 +186,19 @@ h1 + p {
 .slam {
     opacity: 0;
     animation: slam 1.75s .2s 1 normal forwards;
+    -webkit-animation: slam 1.75s .2s 1 normal forwards;
   }
 
   .slide-in-left {
     opacity: 0;
     animation: slideinleft 1.25s .2s 1 normal forwards;
+    -webkit-animation: slideinleft 1.25s .2s 1 normal forwards;
   }
 
   .slide-in-right {
     opacity: 0;
     animation: slideinright 1.25s .2s 1 normal forwards;
+    -webkit-animation: slideinright 1.25s .2s 1 normal forwards;
   }
 
 .subheading > h1 {
