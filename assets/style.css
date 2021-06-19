@@ -110,6 +110,7 @@ h1 + p {
     justify-content: flex-start;
     border: 2px dashed var(--gin);
     transition: all 0.4s ease-in-out;
+    cursor: pointer;
 }
 
 /* when hovering over code-card also do this to the header */
